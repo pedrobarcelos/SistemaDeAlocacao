@@ -31,6 +31,8 @@
             <td th:text="${cliente.profissao}"></td>
             <td th:text="${cliente.cpf}"></td>
             <td>
+                <a th:href="@{/rh/clientes/{id}(id=${cliente.id})}" class="btn btn-primary">Alterar</a>
+                <a th:href="@{/rh/clientes/excluir/{id}(id=${cliente.id})}" class="btn btn-danger">Excluir</a>
             </td>
         </tr>
         </tbody>
