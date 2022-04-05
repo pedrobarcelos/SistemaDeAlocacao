@@ -1,9 +1,6 @@
 package grupo5.SistemaDeAlocacao.rh.dominio;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,17 +21,12 @@ public class Cliente {
 
     private String profissao;
 
-//    private List<String> empregadores;
-//
-//    private List<Float> rendimentos;
-
-    @Deprecated
     protected Cliente(){}
 
+    @Deprecated
     public Cliente(String nome){
         this.nome = nome;
     }
-
 
     @Override
     public String toString() {

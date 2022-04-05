@@ -11,32 +11,39 @@
 
 </head>
 <body>
-<div class="container my-2">
-    <a th:href="@{/rh/clientes/novo}" class="btn btn-primary btn-sm mb-3">Incluir cliente</a>
-    <h1>Cliente</h1>
-    <table border="1" class="table table-striped table-responsive-md">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Profissão</th>
-            <th>CPF</th>
-            <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="cliente : ${listaClientes}">
-            <td th:text="${cliente.id}"></td>
-            <td th:text="${cliente.nome}"></td>
-            <td th:text="${cliente.profissao}"></td>
-            <td th:text="${cliente.cpf}"></td>
-            <td>
-                <a th:href="@{/rh/clientes/{id}(id=${cliente.id})}" class="btn btn-primary">Alterar</a>
-                <a th:href="@{/rh/clientes/excluir/{id}(id=${cliente.id})}" class="btn btn-danger">Excluir</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+<div style="background-color: #A1F7A1">
+    <div class="container my-2">
+        <h1>Sistema gerenciador de clientes</h1>
+        <a th:href="@{/rh/clientes/novo}" class="btn btn-primary btn-sm mb-3">  +  </a>
+        <table border="1" class="table table-success table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Profissão</th>
+                <th>CPF</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${listaClientes.isEmpty()}">
+                <td class="text-center" colspan="3">No records found. Add some...!</td>
+            </tr>
+            <tr th:each="cliente : ${listaClientes} ">
+                <td th:text="${cliente.id}"></td>
+                <td th:text="${cliente.nome}"></td>
+                <td th:text="${cliente.profissao}"></td>
+                <td th:text="${cliente.cpf}"></td>
+                <td>
+                    <a th:href="@{/rh/clientes/{id}(id=${cliente.id})}" class="btn btn-primary">Alterar</a>
+                    <a th:href="@{/rh/clientes/rendimentos/novo/{id}(id=${cliente.id})}" class="btn btn-warning">Adicionar Rendimento</a>
+                    <a th:href="@{/rh/clientes/rendimentos/{id}(id=${cliente.id})}" class="btn btn-warning">Ver rendimentos</a>
+                    <a th:href="@{/rh/clientes/excluir/{id}(id=${cliente.id})}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>

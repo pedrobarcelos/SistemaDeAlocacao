@@ -1,0 +1,8 @@
+grupo5/SistemaDeAlocacao/PopulacaoInicialBanco.class
+grupo5/SistemaDeAlocacao/SistemaDeAlocacaoApplication.class
+grupo5/SistemaDeAlocacao/rh/controle/RendimentoControle.class
+grupo5/SistemaDeAlocacao/rh/controle/ClienteControle.class
+grupo5/SistemaDeAlocacao/rh/dominio/Rendimento.class
+grupo5/SistemaDeAlocacao/rh/dominio/RendimentoRepositorio.class
+grupo5/SistemaDeAlocacao/rh/dominio/Cliente.class
+grupo5/SistemaDeAlocacao/rh/dominio/ClienteRepositorio.class
